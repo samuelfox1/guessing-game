@@ -1,30 +1,14 @@
-// an automated guessing game for numbers 1-10
+import Game from './lib/Game.js';
 
-
-/*
-    player object
-        - name
-        - secret number
-        - history
-            -collection of guesses for another player
-    
-        - methods
-            - receiveGuessFrom
-                - recieve a number
-                - check if number matches my secret
-                - add guess to history
-                - respond true or false if number matches
-
- */
-
-
-const Game = require('./lib/Game')
-const seed = [
+const players = [
     { name: 'Sam', secret: 0 },
-    { name: 'Mo', secret: 9 }
-]
-const game = new Game()
+    { name: 'Mo', secret: 9 },
+    { name: 'Miley', secret: 7 },
+    { name: 'Racquel', secret: 5 },
+];
 
-seed.forEach(player => game.addPlayer(player))
-console.log(game)
-game.start()
+const game = new Game();
+
+players.forEach(player => game.addPlayer(player));
+
+game.start();
